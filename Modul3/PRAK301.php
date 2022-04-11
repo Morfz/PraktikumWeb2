@@ -5,8 +5,9 @@
 </head>
 <body>
     <?php
-        error_reporting(0);
-        $jumlah=$_POST['jumlah'];
+        if(isset($_POST['submit'])){
+            $jumlah=$_POST['jumlah'];
+        }
     ?>
     <form method="post" action="">
         Jumlah Peserta : <input type="number" name="jumlah" value="<?php echo $jumlah;?>"><br>

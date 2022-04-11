@@ -11,9 +11,10 @@
 </head>
 <body>
     <?php
-        error_reporting(0);
+    if(isset($_POST['submit'])){
         $btsBawah=$_POST['btsBawah'];
         $btsAtas=$_POST['btsAtas'];
+    }
     ?>
     <form method="post" action="">
         Batas Bawah : <input type="number" name="btsBawah" value="<?php echo $btsBawah;?>"><br>
