@@ -15,14 +15,13 @@
             echo "<h3>Output</h3>";
             $pnjng = strlen($input);
             $teks = str_split($input);
+
             $j=0;
-            $k=0;
-            while($k<$pnjng){
+            for($k=0; $k<$pnjng; $k++){
                 echo strtoupper($teks[$j]);
                 for($i=1; $i<$pnjng; $i++){
                     echo strtolower($teks[$j]);
                 }
-                $k++;
                 $j++;
             }
         }

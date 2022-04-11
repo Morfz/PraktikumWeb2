@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRAK302</title>
-    <!-- <style>
-        .tab {
-            width: 20px;
-            height: 20px;
+    <style type="text/css">
+        img {
+            width : 16px;
+            height : 16px;
         }
-    </style> -->
+        td {
+            float : right;
+        }
+    </style>
 </head>
-
 <body>
+    <?php
+        error_reporting(0);
+        $tinggi = $_POST['tinggi'];
+        $url = $_POST['url'];
+    ?>
     <form action="" method="post">
         Tinggi :<input type="text" name="tinggi"> <br>
         Alamat Gambar : <input type="text" name="url"> <br>
-        <input type="submit" value="cetak">
-
+        <input type="submit" name="submit" value="Cetak">
     </form>
     <?php
-    $tinggi = $_POST['tinggi'];
-    $url = $_POST['url'];
-
-    $a = 1;
-    while ($a <= $tinggi) {
-        $b = 1;
-        while ($b < $a) {
-            echo "&nbsp;" . "&nbsp;" . "&nbsp;" . "&nbsp;" . "&nbsp;";
-            $b++;
-        }
-        $c = $tinggi;
-        while ($c >= $a) {
-            echo "<img src='$url'class='tab'>";
-            $c--;
-        }
-        echo '<br>';
-        $a++;
+    if(isset($_POST['submit'])){
+        $i=0;
+        echo "<table>";
+        while ($tinggi > $i){
+            $j = 0;
+            echo "<tr><td>";
+            while ($j < $tinggi){
+                echo "<img src='$url'>";
+                $j ++;
+            }
+            echo "</td></tr>";
+            $tinggi --;
+            }
+        echo "</table>";
     }
     ?>
 </body>
-
 </html>
