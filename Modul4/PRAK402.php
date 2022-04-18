@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +8,7 @@
             padding: 5px;
         }
     </style>
-    <title>PRAK 402</title>
+    <title>PRAK402</title>
 </head>
 <body>
     <?php
@@ -19,8 +18,7 @@
             ["nama" => "Tono", "nim" => "2101003", "uts" => 50, "uas" => 41],
             ["nama" => "Jessica", "nim" => "2101004", "uts" => 60, "uas" => 75],
         ];
-
-        for ($i=0; $i < count($nilai); $i++) { 
+        for ($i=0; $i<count($nilai); $i++) { 
             $nilai[$i]["akhir"] = $nilai[$i]["uts"] * 0.4 + $nilai[$i]["uas"] * 0.6;
             if($nilai[$i]["akhir"] >= 80){
                 $nilai[$i]["huruf"] = "A";
@@ -34,19 +32,16 @@
                 $nilai[$i]["huruf"] = "E";
             }
         }
-    ?>
-    
-    <table style="width:500px">
-        <tr style="text-align:left; background-color:lightgrey;">
-            <th>Nama</th>
-            <th>NIM</th>
-            <th>Nilai UTS</th>
-            <th>Nilai UAS</th>
-            <th>Nilai Akhir</th>
-            <th>Huruf</th>
-        </tr>
-        <?php
-        for ($i=0; $i < count($nilai); $i++) { 
+        echo "<table style='width:700px'>";
+        echo "<tr style='text-align:left; background-color:lightgrey;'>";
+        echo "<th>Nama</th>";
+        echo "<th>NIM</th>";
+        echo "<th>Nilai UTS</th>";
+        echo "<th>Nilai UAS</th>";
+        echo "<th>Nilai Akhir</th>";
+        echo "<th>Huruf</th>";
+        echo "</tr>";
+        for ($i=0; $i<count($nilai); $i++) { 
             echo "<tr>";
             echo "<td>".$nilai[$i]["nama"]."</td>";
             echo "<td>".$nilai[$i]["nim"]."</td>";
@@ -55,8 +50,8 @@
             echo "<td>".$nilai[$i]["akhir"]."</td>";
             echo "<td>".$nilai[$i]["huruf"]."</td>";
             echo "</tr>";
-        }       
+        }  
+        echo "</table>"
         ?>
-    </table>
 </body>
 </html>
