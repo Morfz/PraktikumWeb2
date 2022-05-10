@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- <script src="https://kit.fontawesome.com/14edc419b7.js"></script> -->
+</head>
+<body>
+</body>
+</html>
 <?php
 require("Koneksi.php");
 
@@ -14,9 +23,9 @@ function getDataBuku(){
         echo "<td>" . $row['penerbit'] . "</td>";
         echo "<td>" . $row["tahun_terbit"] . "</td>";
         echo "<td>";
-        echo "<a href='FormBuku.php? aksi=edit&id_buku=".$row['id_buku']."'>Ubah</a>";
-        echo " | ";
-        echo "<a href='Buku.php? aksi=delete&id_buku=".$row['id_buku']."' onclick=\"return confirm('Yakin Hapus?')\">Hapus</a>";
+        echo "<a href='FormBuku.php? id_buku=".$row['id_buku']."' class='btn btn-warning btn-sm ml-2'>Ubah</a>";
+        echo " ";
+        echo "<a href='Buku.php? id_buku=".$row['id_buku']."' class='btn btn-danger btn-sm ml-2' onclick=\"return confirm('Yakin Hapus?')\">Hapus</a>";
         echo "</td>";
         echo "</tr>";
     }
@@ -34,9 +43,9 @@ function getDataMember(){
         echo "<td>" . $row["tgl_mendaftar"] . "</td>";
         echo "<td>" . $row["tgl_terakhir_bayar"] . "</td>";
         echo "<td>";
-        echo "<a href='FormMember.php?id_member=".$row['id_member']."'>Ubah</a>";
-        echo " | ";
-        echo "<a href='Member.php?id_member=" . $row['id_member'] . "' onclick=\"return confirm('Yakin Hapus?')\">Hapus</a>";
+        echo "<a href='FormMember.php?id_member=".$row['id_member']."' class='btn btn-warning btn-sm ml-2'>Ubah</a>";
+        echo " ";
+        echo "<a href='Member.php?id_member=" . $row['id_member'] . "' class='btn btn-danger btn-sm ml-2' onclick=\"return confirm('Yakin Hapus?')\">Hapus</a>";
         echo "</td>";
         echo "</tr>";
     }
@@ -51,9 +60,9 @@ function getDataPeminjaman(){
         echo "<td>" . $row["tgl_pinjam"] . "</td>";
         echo "<td>" . $row["tgl_kembali"] . "</td>";
         echo "<td>";
-        echo "<a href='FormPeminjaman.php?id_peminjaman=" . $row['id_peminjaman'] . "'>Ubah</a>";
-        echo " | ";
-        echo "<a href='Peminjaman.php?id_peminjaman=" . $row['id_peminjaman'] . "' onclick=\"return confirm('Yakin Hapus?')\">Hapus</a>";
+        echo "<a href='FormPeminjaman.php?id_peminjaman=" . $row['id_peminjaman'] . "' class='btn btn-warning btn-sm ml-2'>Ubah</a>";
+        echo " ";
+        echo "<a href='Peminjaman.php?id_peminjaman=" . $row['id_peminjaman'] . "' class='btn btn-danger btn-sm ml-2' onclick=\"return confirm('Yakin Hapus?')\">Hapus</a>";
         echo "</td>";
         echo "</tr>";
     }
