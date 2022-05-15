@@ -7,7 +7,6 @@
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/14edc419b7.js"></script>
     <title>Perpustakaan</title>
 </head>
 <body>
@@ -21,15 +20,7 @@
                     <p><a class="btn btn-danger" href="Buku.php">Data Buku</a></p>
                     <p><a class="btn btn-warning" href="Member.php">Data Member</a></p>
                     <p><a class="btn btn-success" href="Peminjaman.php">Data Peminjaman</a></p>
-            </div>
-            <!-- <div class="card mx-auto" style="max-width: 10cm;">
-                <div class="card-header" style="font-weight: bold;"><i class="fa fa-circle-info"></i> INFORMASI</div>
-                <div class="card-body">
-                    Tombol <b>Member</b> Untuk Cek List Member<br>
-                    Tombol <b>Buku</b> Untuk Cek List Buku<br>
-                    Tombol <b>Peminjaman</b> Untuk Cek Peminjaman<br>
                 </div>
-            </div> -->
             </div>
         </div>
     </div>

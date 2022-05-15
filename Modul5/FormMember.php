@@ -17,7 +17,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- <script src="https://kit.fontawesome.com/14edc419b7.js"></script> -->
     <?php echo (isset($_GET['id_member']))? "<title>Update Data Member</title>" : "<title>Tambah Data Member</title>" ?>
 </head>
 
@@ -28,7 +27,7 @@
                 <h1>Perpustakaan</h1>
                 <hr>
                 <h3>Form Member</h3>
-                <a class="btn btn-danger my-2" href="Buku.php"><i class="fa fa-arresult-left"></i> Kembali</a>
+                <a class="btn btn-danger my-2" href="Member.php"><i class="fa fa-arresult-left"></i> Kembali</a>
                 <p></p>
                         <form action="" method="post">
                             <div class="mb-3">
@@ -45,7 +44,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="tgl_mendaftar">Tanggal Mendaftar</label>
-                                <input type="datetime-local" class="form-control" name="tgl_mendaftar" id="tgl_mendaftar" <?php echo (isset($_GET['id_member'])) ?  "value = '" . $result[0]["tgl_mendaftar"] . "'" : "value = '' "; ?> placeholder="Tanggal Mendaftar" required>
+                                <input type="datetime-local" class="form-control" name="tgl_mendaftar" id="tgl_mendaftar" <?php echo (isset($_GET['id_member'])) ?  "value = " . $result[0]["tgl_mendaftar"] . "" : "value = '' "; ?> placeholder="Tanggal Mendaftar" required>
                             </div>
                             <div class="mb-3">
                                 <label for="tgTerakhirBayar">Tanggal Terakhir Bayar</label>
@@ -62,18 +61,17 @@
 
     <?php
         if (isset($_POST['submit'])) {
-            $tgl_daftar = date_create($_POST['tgl_mendaftar']);
-            $tgl_daftar = date_format($tgl_daftar,"Y-m-d H:i:s");
-            // print_r($_POST);
-            insertMember($_POST['nama_member'], $_POST['nomor_member'], $_POST['alamat'], $tgl_daftar, $_POST['tgl_terakhir_bayar']);
+            // $tgl_daftar = date_create($_POST['tgl_mendaftar']);
+            // $tgl_daftar = date_format($tgl_daftar,"Y-m-d H:i:s");
+            insertMember($_POST['nama_member'], $_POST['nomor_member'], $_POST['alamat'], $_POST['tgl_mendaftar'], $_POST['tgl_terakhir_bayar']);
         }
         if (isset($_POST['update'])) {
             // $tgl_daftar = date_create($_POST['tgl_daftar']);
             // $tgl_daftar = date_format($tgl_daftar,"Y-m-d H:i:s");
             $tgl_daftar = date('Y-m-d H:i:s', strtotime($_POST['tgl_mendaftar']));
-            // print_r($_POST);
-            updateMember($_GET['id_member'],$_POST['nama_member'], $_POST['nomor_member'], $_POST['alamat'], $tgl_daftar, $_POST['tgl_terakhir_bayar']);
+            updateMember($_GET['id_member'],$_POST['nama_member'], $_POST['nomor_member'], $_POST['alamat'], $_POST['tgl_mendaftar'], $_POST['tgl_terakhir_bayar']);
         }
+        
     ?>
 </body>
 </html>
